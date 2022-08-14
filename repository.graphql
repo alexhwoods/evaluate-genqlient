@@ -1,0 +1,8 @@
+query GetRepository {
+  repository(name: "kubernetes", owner: "kubernetes") {
+    name
+    description
+    url
+    stargazerCount
+  }
+}
