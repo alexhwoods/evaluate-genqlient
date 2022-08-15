@@ -9,7 +9,7 @@ import (
 	"github.com/alexhwoods/evaluate-genqlient/generated"
 )
 
-// go:generate go run github.com/Khan/genqlient genqlient.yaml
+//go:generate go run github.com/Khan/genqlient genqlient.yaml
 
 const GithubGraphqlAPI = "https://api.github.com/graphql"
 
