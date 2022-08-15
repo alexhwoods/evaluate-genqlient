@@ -2,8 +2,8 @@
 # https://github.com/Khan/genqlient/blob/main/docs/genqlient.yaml
 schema: schema.graphql
 operations:
-  - repository.graphql
-generated: generated/generated.go
+  - "graphql/*.graphql"
+generated: generated/graphql.go
 package: generated
 bindings:
   URI:
