@@ -6,8 +6,10 @@ import (
 	"net/http"
 
 	"github.com/Khan/genqlient/graphql"
-	"github.com/alexhwoods/evaluate-genqlient/genqlient"
+	"github.com/alexhwoods/evaluate-genqlient/generated"
 )
+
+// go:generate go run github.com/Khan/genqlient genqlient.yaml
 
 const GithubGraphqlAPI = "https://api.github.com/graphql"
 
@@ -35,7 +37,7 @@ func main() {
 		},
 	}
 	client := graphql.NewClient(GithubGraphqlAPI, &httpClient)
-	resp, err := genqlient.GetRepository(ctx, client)
+	resp, err := generated.GetRepository(ctx, client, "kubernetes", "kubernetes")
 
 	if err != nil {
 		fmt.Printf("error: %s", err)
@@ -44,7 +46,7 @@ func main() {
 	useRepository(resp.Repository)
 }
 
-func useRepository(repository genqlient.GetRepositoryRepository) {
+func useRepository(repository generated.GetRepositoryRepository) {
 	fmt.Printf("repository.Name: %v\n", repository.Name)
 	fmt.Printf("repository.Description: %v\n", repository.Description)
 	fmt.Printf("repository.StargazerCount: %v\n", repository.StargazerCount)

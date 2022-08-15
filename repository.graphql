@@ -1,5 +1,5 @@
-query GetRepository {
-  repository(name: "kubernetes", owner: "kubernetes") {
+query GetRepository($name: String!, $owner: String!) {
+  repository(name: $name, owner: $owner) {
     name
     description
     url

@@ -3,7 +3,8 @@
 schema: schema.graphql
 operations:
   - repository.graphql
-generated: generated.go
+generated: generated/generated.go
+package: generated
 bindings:
   URI:
     type: string
