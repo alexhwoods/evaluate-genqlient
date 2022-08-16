@@ -26,7 +26,7 @@ func (t *authedTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 }
 
 func main() {
-	key := "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"
+	key := "<personal-access-token>"
 
 	ctx := context.Background()
 
